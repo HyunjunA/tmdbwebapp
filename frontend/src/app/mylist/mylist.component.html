@@ -1,0 +1,222 @@
+<div id="mylistpage">
+<div class="maindetailwindow">
+
+    <div *ngIf="moviesmediainfoset?.length">
+
+
+
+        <div id="nonemtpylisttitle"><h1>My WatchList</h1></div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- origin mobile -->
+        <!-- <div *ngIf="mobile" class="container" id="mobibleverwatlist">
+            
+            <div id="outerrowinmylist" *ngFor="let group of moviesmediainfoset ">
+                <div class="mulcarpopmovies" style="" *ngFor="let each of group; index as i ">
+                    
+                    <div id="watchlist{{i}}" (touchstart)="touchstartfuncwatchlist($event,i)"
+                        (touchend)="touchendfuncwatchlist($event,i)">
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <div id="container" class="wrapimgcapinmylistmobile">
+                            <figure class="col-lg-2" (touchstart)="touchstartfuncwatchlist($event,i)"
+                            (touchend)="touchendfuncwatchlist($event,i)">
+                                <img class="eachimgverthrinmylistmobile" [src]="each[0]" [title]="each[1]"
+                                    [alt]="each[1]" (touchstart)="touchstartfuncwatchlist($event,i)"
+                                    (touchend)="touchendfuncwatchlist($event,i)">
+                                <figcaption class="realtitleverfivinmylistmobile" (touchstart)="touchstartfuncwatchlist($event,i)"
+                                (touchend)="touchendfuncwatchlist($event,i)">
+                                    <div class="innertitlemobile" >
+                                        {{each[1]}}
+                                    </div>
+                                </figcaption>
+                                
+                            </figure>
+                        </div>
+                        
+                    </a>
+                </div>
+                </div>
+                
+            </div>
+        </div> -->
+
+
+        <!-- origin -->
+        <!-- <div *ngIf="!mobile" id="nomobibleverwatlist">
+            <div id="outerrowinmylist" *ngFor="let group of moviesmediainfoset ">
+                <div class="mulcarpopmovies" style="" *ngFor="let each of group; index as i ">
+                    
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <div id="container" class="wrapimgcapinmylist">
+                            <figure class="col-lg-2 col-md-2 col-sm-2">
+                                <img class="eachimgverthrinmylist" [src]="each[0]" [title]="each[1]"
+                                    [alt]="each[1]">
+                                <figcaption class="realtitleverfivinmylist">
+                                    <div class="innertitle">
+                                        {{each[1]}}
+                                    </div>
+                                </figcaption>
+                                
+                            </figure>
+                        </div>
+                        
+                    </a>
+
+                </div>
+                
+            </div>
+        </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <div *ngIf="!mobile" id="nomobibleverwatlist">
+            <div class="row" *ngFor="let group of moviesmediainfoset ; index as j ">
+                <div id = "eachcolelem" class="col-lg-2 col-md-2 col-sm-2 " style="" *ngFor="let each of group; index as i ">
+                    
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        
+
+                        <!-- <div id="mousewatchlist{{6*j+i}}" (mouseover)="mousestartfuncwatchlist($event,6*j+i)"
+                        (mouseout)="mouseendfuncwatchlist($event,6*j+i)"> -->
+                        
+
+                        <div id="mousewatchlist{{6*j+i}}" (mouseover)="mousestartfuncwatchlist($event,6*j+i)"
+                        (mouseout)="mouseendfuncwatchlist($event,6*j+i)">
+                            <div class="imageContainer" (mouseover)="mousestartfuncwatchlist($event,6*j+i)"
+                            (mouseout)="mouseendfuncwatchlist($event,6*j+i)">
+                                <img class="eachimgforcollelem" [src]="each[0]"  [title]="each[1]"
+                                [alt]="each[1]" (mouseover)="mousestartfuncwatchlist($event,6*j+i)"
+                                (mouseout)="mouseendfuncwatchlist($event,6*j+i)"/>
+                                <!-- <span>{{each[1]}}</span> -->
+                                <span class="eachcapnonmobile">
+                                    <div id="watlisttext">{{each[1]}}</div>
+                                    <!-- <div id="mobilewatlisttext">HAHAHAH</div> -->
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </a>
+
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
+        <div id="mobileelemouter">
+        <div *ngIf="mobile" id="mobibleverwatlist">
+            <div class="row" *ngFor="let group of moviesmediainfoset; index as j  ">
+                <div id = "eachcolelemmobile" class="col-lg-2 col-md-2 col-sm-2 " style="" *ngFor="let each of group; index as i ">
+                    
+
+                    <div id="watchlist{{6*j+i}}" (touchstart)="touchstartfuncwatchlist($event,6*j+i)"
+                        (touchend)="touchendfuncwatchlist($event,6*j+i)">
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            
+
+                            <!-- <div class="imageContainer  wrapimgcapinmylist"  > -->
+                                <div class="imageContainermobile">
+                                    <img class="eachimgforcollelemmobile" [src]="each[0]"  [title]="each[1]"
+                                    [alt]="each[1]"/>
+                                    <span class="eachcap">
+                                        <div id="mobilewatlisttext">{{each[1]}}</div>
+                                        <!-- <div id="mobilewatlisttext">HAHAHAH</div> -->
+                                    </span>
+                                </div>
+                            <!-- </div> -->
+                            
+                        </a>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <div *ngIf="!moviesmediainfoset?.length" id="emtpylisttitle">
+        <!-- <h1>No items found in Watchlist.</h1> -->
+        <h1>No items found in Watchlist.</h1>
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+
+
+<!-- <div class="row"> -->
+<!-- <div class="row"> -->
+<div id="mylistpage">
+
+    <div id="page-container" >
+    <div id="content-wrap">
+        <!-- all other page content -->
+    </div>
+    <footer id="footer">Powered by TMDB. Developed by Hyunjun Choi.</footer>
+</div>
+<!-- </div> -->
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- test -->
+<!-- <div class="imageContainer">
+    <div>
+        <img src=".." />
+        <span>...caption...</span>
+    </div>
+</div> -->

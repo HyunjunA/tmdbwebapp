@@ -1,0 +1,69 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+# First version
+# - url: /
+#   static_files: dist/my-web-project-eight/index.html
+#   upload: dist/my-web-project-eight/index.html
+
+# - url: /
+#   static_dir: dist/my-web-project-eight
+
+# - url: /watch
+# static_dir: static/watch
+# http_headers:
+# # Access-Control-Allow-Origin: https://tmdbandchoi-qunrd6r5ca-uw.a.run.app
+# Access-Control-Allow-Origin: '*'
+
+# - url: /watch/movie/
+# static_dir: static/watch/movie
+# http_headers:
+# # Access-Control-Allow-Origin: https://tmdbandchoi-qunrd6r5ca-uw.a.run.app
+# Access-Control-Allow-Origin: '*'
+
+
+# - url: /watch/tv/
+# static_dir: static/watch/tv
+# http_headers:
+# # Access-Control-Allow-Origin: https://tmdbandchoi-qunrd6r5ca-uw.a.run.app
+# Access-Control-Allow-Origin: '*'
+
+
+# - url: /mylist
+# static_dir: static/mylist
+# http_headers:
+# # Access-Control-Allow-Origin: https://tmdbandchoi-qunrd6r5ca-uw.a.run.app
+# Access-Control-Allow-Origin: '*'
+
+
+
+
+# Second version
+- url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
+  static_files: dist/my-web-project-eight/\1
+  upload: dist/my-web-project-eight/(.*)(|\.map)
+
+- url: /(.*)
+  static_files: dist/my-web-project-eight/index.html
+  upload: dist/my-web-project-eight/index.html
+
+
+
+
+# Third version
+# # index files
+# - url: /([^.]+)/?$  # urls with no dot in them
+#   static_files: dist/my-web-project-eight/index.html
+#   upload: dist/my-web-project-eight/index.html
+
+# # site root
+# - url: /
+#   static_files: dist/my-web-project-eight/index.html
+#   upload: dist/my-web-project-eight/index.html
+
+# # everything else
+# - url: /(.*)
+#   static_files: dist/my-web-project-eight/\1
+#   upload: dist/my-web-project-eight/(.*)

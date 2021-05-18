@@ -1,0 +1,667 @@
+<!-- <h3>tv detail</h3>
+<p>tv detail</p> -->
+
+<!-- <youtube-player 
+  videoId="sfM7_JLk-84" 
+  suggestedQuality="highres" 
+  [height]="250" 
+  [width]="500" 
+  [startSeconds]="4"
+  [endSeconds]="8">
+</youtube-player> -->
+
+
+
+
+<div class="maindetailwindow">
+
+
+  <div class="row">
+    <div id="youtubewrap" class="col-xs-8 col-sm-8 col-md-8 col-lg-8" >
+      <div class="embed-responsive embed-responsive-16by9">
+      <youtube-player  [videoId]="tvvideo" [width]="youtubewidth" [height]="youtubeheight" suggestedQuality="highres">
+      </youtube-player>
+    </div>
+    </div>
+
+    <div id="informationwrap" class="col-xs-8 col-sm-8 col-md-8 col-lg-3 col-xl-3 mx-2">
+      <div class=firstcolumbox>
+        <div class="textinfo">
+          <h1 class="mediainfo" id="detailpagemediatitle">{{tvtitle}}</h1>
+          <h3 class="mediainfo" id="detailpagemediatagline">{{tvtagline}}</h3>
+
+
+          <div id="sprow" class="row">
+            <h3 class="mediainfo" id="detailpagemediayear">{{tvreleaseyear}}</h3>
+            <h3 class="mediainfo" id="detailpagemediayear"> &nbsp; | &nbsp;</h3>
+            <h3 class="mediainfo" id="detailpagemediavote">&#9733;{{tvpoint}}</h3>
+            <h3 class="mediainfo" id="detailpagemediayear"> &nbsp; | &nbsp;</h3>
+            <h3 class="mediainfo" id="detailpagemediaruntime">{{tvruningtime}}</h3>
+          </div>
+
+
+
+          <h3 class="mediainfo" id="detailpagemediagenre"><b>Genres</b> <span id="genrelisttext">: {{thistvgenrename}}.</span></h3>
+          <h3 class="mediainfo" id="detailpagemediasplan"><b>Spoken Languages</b> <span id="tvspklantext">: {{tvspoklan}}</span></h3>
+          <div id="buttondiv">
+            <button type="button" id="addwatchlistbutton" class="btn btn-primary" (click)="addtowatchlistfunc()">Add to
+              Watchlist</button>
+
+            <div id="alertunder" class="alert alert-success">
+              <button id="alertbutton" type="button" class="close">
+                <div (click)="hidealertelem()">&times;</div>
+              </button>
+              <div id="buttontext">Added to watchlist.</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="descrow">
+    <div class="row">
+      <div id="description"class="column">
+        <h3 id="descriptionheadertext" class="mediainfo">Description</h3>
+        <p class="mediainfo" id="detailpagemediaoverview">{{tvoverview}}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="sharerow">
+    <div class="row">
+      <div id="tweetfacebox" class="column">
+        <h3 id="shareheadtext"class="mediainfo">Share</h3>
+
+
+        <a id="socialtweet" class="twitter-share-button" target="_blank" href="" data-size="large">
+
+          <img class="twittericon" src="/assets/img/twittericon.png">
+
+        </a>
+
+
+
+
+        <a id="socialfacebook" href="" target="_blank">
+          <img class="facebookicon" src="/assets/img/facebookicon.png">
+        </a>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="fullcastcrewrow">
+    <div class="row">
+
+      <h3 id= "fcacheadertext" class="mediainfo">Full Cast and Crew</h3>
+
+
+      <div id="fullcastcrewrowmain" *ngIf="tvcredits">
+
+
+        <!-- col-lg-2 col-md-2 col-sm-2 col-2 -->
+        <div *ngIf="mobile" class="d-flex flex-row flex-nowrap overflow-auto" id="castcrewbox">
+          <!-- <div class="card card-block mx-2" style="min-width: 16.66%;" *ngFor="let each of tvcredits;  index as i "> -->
+          <!-- card card-block mx-3 -->
+          <div id="cardeach" class="card card-block mx-1 wrapimgcapinmovid"
+            *ngFor="let each of tvcredits;  index as i " [style.width.px]="castwidth" [style.height.px]="castheight">
+            <!-- <a class="anchorforcastcrew" href="" target="_self" rel="nofollow noopener noreferrer"> -->
+            <button class="btn" (click)="openLg(content, each[3])">
+              <img class="eachimgverthr" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+
+
+
+              <div class="card-body">
+                <!-- <h5 id="cardtitle" class="card-title">{{each[1]}}</h5> -->
+                <h5 id="cardtitle" class="card-text">{{each[1]}}</h5>
+                <p id="asstest" class="card-text">AS</p>
+                <p class="card-text">{{each[2]}}</p>
+              </div>
+            </button>
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Origin -->
+        <div *ngIf="!mobile" class="d-flex flex-row flex-nowrap overflow-auto" id="castcrewbox">
+          <!-- <div class="card card-block mx-2" style="min-width: 16.66%;" *ngFor="let each of tvcredits;  index as i "> -->
+          <!-- card card-block mx-3 -->
+          <div id="cardeach" class="card card-block mx-1 col-lg-2 col-md-2 col-sm-2 col-2 "
+            *ngFor="let each of tvcredits;  index as i ">
+            <!-- <a class="anchorforcastcrew" href="" target="_self" rel="nofollow noopener noreferrer"> -->
+            <button class="btn" (click)="openLg(content, each[3])">
+              <img class="card-img-top" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+
+
+
+              <div class="card-body">
+                <!-- <h5 id="cardtitle" class="card-title">{{each[1]}}</h5> -->
+                <h5 id="cardtitle" class="card-text">{{each[1]}}</h5>
+                <p id="asstest" class="card-text">AS</p>
+                <p class="card-text">{{each[2]}}</p>
+              </div>
+            </button>
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="row" *ngIf="reviewinfo.length > 0">
+    <h3 id="reviewrow" class="mediainfo">Reviews <span id="reviewcount">{{reviewinfo.length}}</span></h3>
+  </div>
+
+
+  <!-- <h3 class="">Reviews</h3> -->
+  <div id="reviewunits" class="row" *ngFor="let group of reviewinfo;  index as i ">
+
+    <div class="row " id="reviewpanal">
+      <div id="avareview" class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2  ">
+        <img class="eachimginreview rounded-circle" [src]="group[5]" [title]="" [alt]="">
+      </div>
+
+      <div id="revieinfor" class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-10">
+        <!-- <p id="" class="">A review created by {{group[0]}} <span><img src="/assets/img/stars-24px.svg"> {{group[4]}}</span></p> -->
+        <!-- <p id="" class="">A review created by {{group[0]}} <span><img id="staratreivew" src="/assets/img/stars-24px.svg"> {{group[4]}}</span></p> -->
+
+        <p id=""><span class="reviewpanaltitme">A review created by {{group[0]}}</span><span>&nbsp;</span>
+          <span class="fa-layers fa-fw rounded-pill" style="background:rgb(0, 0, 0)">
+            <i class="fas fa-star "></i>
+            <span id="startext" class="fa-layers-text fa-inverse" data-fa-transform="shrink-8 down-3"
+              style="font-weight:900">{{group[4]}}</span>
+          </span>
+        </p>
+
+
+
+        <p id="" class="writtenby">Written by {{group[0]}} on {{group[2]}}</p>
+
+        <p id="" class="realreviewtext">{{group[1]}}</p>
+
+        <!-- <p id="" class="">{{group[3]}}</p> -->
+        <!-- <p id="" class="">{{group[4]}}</p> -->
+        <!-- <p id="" class="">{{group[5]}}</p> -->
+        <!-- <p>{{group[6]}}</p> -->
+        <a class="fullreview" [href]=group[3] target="_blank"> <u>
+            <div class="readreviewrest">Read the rest</div>
+          </u></a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 
+  tvreview['results'][i]['author'],
+  tvreview['results'][i]['content'],
+  tvreview['results'][i]['created_at'],
+  tvreview['results'][i]['url'],
+  tvreview['results'][i]['author_details']['rating'],
+  avapath,
+  tvreview['results'].length]) 
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- persondata -->
+
+
+  <!-- `https://image.tmdb.org/t/p/original/${temppersondata['profile_path']}`, 
+  temppersondata['name'] , 
+  temppersondata['birthday'], 
+  temppersondata['birth_place']
+  temppersondata['gender'], 
+  temppersondata['homepage'], 
+  temppersondata['also_known_as'],
+  temppersondata['known_for_department'],
+  temppersondata['biography'] -->
+
+
+  <ng-template #content let-modal>
+    <div class="personwrapper" *ngFor="let each of persondata;">
+      <div class="modal-header">
+        <h4 class="modal-title">{{each[1]}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body px-0">
+        <div class="stylewrap" style="overflow-y: hidden; height: calc(100vh - 15rem);">
+          <div class="px-2" style="overflow-y: auto; height: 100%;">
+
+            <!-- <div class="personimgbox col-xs-10 col-sm-10"> -->
+            <div class="personimgbox col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+              <img class="personimg" [src]="each[0]">
+            </div>
+
+            <div class="personinfobox">
+              <p>Birth: {{each[2]}}
+                <br>
+                Birth Place: {{each[3]}}
+                <br>
+                Gender: {{each[4]}}
+                <br>
+                Website: <a [href]=each[5]>{{each[5]}}</a>
+                <br>
+                Known for: {{each[7]}}
+                <br>
+                Also known as: {{each[6]}}
+              </p>
+
+              <div class="personsocialmediapack">
+                <!-- <iframe [src]="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=large&width=144&height=28&appId" width="144" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+
+                <!-- imdb -->
+                <!-- <div *ngIf=each[9]> -->
+                <a *ngIf=each[9] class="personsocialmediapackeach" [href]="'http://imdb.com/name/' + each[9]"
+                  target="_blank" ngbPopover="Visit IMDB">
+                  <img class="imdbicon" src="/assets/img/imdbicon.png">
+                </a>
+                <!-- </div> -->
+
+
+                <!-- instagram -->
+
+                <!-- <div *ngIf=each[11]> -->
+                <a *ngIf=each[11] class="personsocialmediapackeach" [href]="'http://instagram.com/' +each[11]"
+                  target="_blank" ngbPopover="Visit Instagram">
+                  <img class="instaframicon" src="/assets/img/instaframicon.png">
+                </a>
+                <!-- </div> -->
+
+
+                <!-- facebook -->
+                <!-- <div *ngIf=each[10]> -->
+
+                <a *ngIf=each[10] class="personsocialmediapackeach" [href]="'http://facebook.com/' +each[10]"
+                  target="_blank" ngbPopover="Visit Facebook">
+                  <img class="facebookicon" src="/assets/img/facebookicon.png">
+                </a>
+                <!-- </div> -->
+
+
+
+
+                <!-- twitter -->
+                <!-- <div *ngIf=each[12]> -->
+
+                <a *ngIf=each[12] class="personsocialmediapackeach" [href]="'http://twitter.com/'+ each[12]"
+                  target="_blank" ngbPopover="Visit Twitter">
+                  <img class="twittericon" src="/assets/img/twittericon.png">
+                </a>
+                <!-- </div> -->
+
+
+
+              </div>
+
+
+            </div>
+
+
+            <div id="biogwrap" class="modal-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf=each[8]>
+
+              <h3 >Biography</h3>
+              <p>{{each[8]}}</p>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div> -->
+    </div>
+  </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="temprecsimwra">
+    <div class="centeredver3" id="media">
+
+      <div *ngIf="rectv">
+        <h1 class="eachheader">Recommended TV shows</h1>
+      </div>
+      <!-- <h1 class="eachheader">Recommended TV shows</h1> -->
+      <!-- <div id="rectvdetailformobile"> -->
+      <div id="rectvdetailformobile">
+        <div *ngIf="rectv">
+          <!-- <h1 class="eachheader">Popular tvs</h1> -->
+          <!-- Mobile section : one image per slide -->
+
+          <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+            [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+            <ng-template ngbSlide *ngFor="let each of recotvsmediainfosetformobile;  index as i">
+              <div id="tvdetailrec{{i}}" (touchstart)="touchstartfuncrectv($event,i)"
+                        (touchend)="touchendfuncrectv($event,i)">
+
+              <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                <div class="carouselcaptioncustomverthr">
+                  <!-- <div id="grad3"></div>
+                  <h3 id="" class="smallcatitlemobile">{{each[1]}}</h3> -->
+                  <div id="grad1"><h3 id="" class="mobilemediatitlenomain">{{each[1]}}</h3></div>
+                    <!-- <p id="" class="mobilemediatitle">{{info[1]}}</p> -->
+                </div>
+
+              </a>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </div>
+
+      <!-- Desktop section : multiple images per slide -->
+      <div id="rectvdetailfornonmobile">
+        <div *ngIf="rectv">
+
+          <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+            <ng-template ngbSlide *ngFor="let group of recotvsmediainfoset;  ">
+              <div class="mulcarpopmovies" style="" *ngFor="let each of group;index as i ">
+                <!-- <div class="carousel-caption">
+                        <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                    </div>
+                     -->
+                <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                  <div id="container" class="wrapimgcap">
+                    <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                      <img class="eachimgverthrmoviedeta" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                      <figcaption class="realtitlemoviedeta">
+                        <div class="innertitle">
+                          {{each[1]}}
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </a>
+
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </div>
+      <!-- </div> -->
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="temprecsimwra">
+    <div class="centeredver3" id="media">
+      <div *ngIf="simitv">
+        <h1 class="eachheader">Similar TV shows</h1>
+      </div>
+      <!-- <h1 class="eachheader">Similar TV shows</h1> -->
+      <!-- <div id="rectvdetailformobile"> -->
+      <div id="simitvdetailformobile">
+        <div *ngIf="simitv">
+          <!-- <h1 class="eachheader">Popular tvs</h1> -->
+          <!-- Mobile section : one image per slide -->
+
+          <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+            [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+            <ng-template ngbSlide *ngFor="let each of simitvmediainfosetformobile;  index as i">
+              <div id="tvdetailsimi{{i}}" (touchstart)="touchstartfuncsimitv($event,i)"
+                        (touchend)="touchendfuncsimitv($event,i)">
+
+              <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                <div class="carouselcaptioncustomverthr">
+                  <!-- <div id="grad3"></div>
+                  <h3 id="" class="smallcatitlemobile">{{each[1]}}</h3> -->
+                  <div id="grad1"><h3 id="" class="mobilemediatitlenomain">{{each[1]}}</h3></div>
+                </div>
+
+              </a>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </div>
+
+      <!-- Desktop section : multiple images per slide -->
+      <div id="simitvdetailfornonmobile">
+        <div *ngIf="simitv">
+
+          <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+            <ng-template ngbSlide *ngFor="let group of simitvmediainfoset;  ">
+              <div class="mulcarpopmovies" style="" *ngFor="let each of group;index as i ">
+                <!-- <div class="carousel-caption">
+                        <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                    </div>
+                     -->
+                <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                  <div id="container" class="wrapimgcap">
+                    <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                      <img class="eachimgverthrmoviedeta" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                      <figcaption class="realtitlemoviedeta">
+                        <div class="innertitle">
+                          {{each[1]}}
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </a>
+
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </div>
+      <!-- </div> -->
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="footerdiv"><p id="footer">Powered by TMDB. Developed by Hyunjun Choi</p></div> -->
+<div id="page-container">
+  <div id="content-wrap">
+    <!-- all other page content -->
+  </div>
+  <footer id="footer">Powered by TMDB. Developed by Hyunjun Choi.</footer>
+</div>

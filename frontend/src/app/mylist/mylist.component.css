@@ -1,0 +1,1159 @@
+/* #nowplayingmimg 
+{
+   width: 100%;
+   height: auto;
+   object-fit: contain;
+} */
+
+body {
+  /* padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%; */
+  background-color: #060E35!important; 
+}
+
+  .centered {
+      /* position: fixed; 
+      top: 50%;
+      left: 50%; */
+  
+      padding-left: 5%;
+      padding-right:5%;
+      padding-top:5%;
+      padding-bottom: 5%;
+  
+      /* margin-bottom: 10%; */
+      
+    }
+  
+  
+    .eachheader{
+      padding-left: 5%!important;
+      color:white;
+    }
+  
+    .centeredver3{
+      margin-bottom:2%;
+    }
+  
+  
+    .picsum-img-wrapper {
+      position: relative!important; 
+      width: 100%!important;
+      height: 100%!important;
+      /* padding-top: 66.67%!important;  */
+      padding-top: 40%!important; 
+      /* padding-bottom: 2%!important;  */
+      
+      /* padding-bottom: 10%!important;  */
+      /* 16:9 Aspect Ratio */
+      overflow: hidden;
+      text-align: center;
+  
+      display: inline-block; /* change the default display type to inline-block */
+      
+      /* max-width: 100%!important;
+    max-height: 100%!important; */
+  
+      /* height: 0!important;
+    overflow: hidden!important;
+    padding-top: calc(500px / 750px * 100%)!important;
+    background: white!important;
+    position: relative!important;
+    overflow: hidden; */
+  
+  
+      
+    }
+    
+    #nowplayingmimg {
+      position: absolute!important; 
+      
+      top:0px;
+      bottom:0px;
+      right:0px;
+      left:0px;
+      width: 100%;
+      /* max-width: 100%; */
+      height: auto;
+      padding-left: 0%;
+      padding-right: 0%;
+      
+      /* margin-right: 5%;
+      margin-left: 5%; */
+      margin-bottom: 10%;
+      margin-left:-10%;
+      margin-right:-10%;
+      /* padding-top: 10%; */
+  
+      /* -webkit-transition: all 0.4s ease-in; */
+     transition: all 0.4s ease-in;
+  }
+  
+  #nowplayingmimg:hover
+  {
+    position: absolute!important; 
+      
+      top:0px;
+      bottom:0px;
+      right:0px;
+      left:0px;
+      /* width: 100%; */
+      /* max-width: 100%; */
+      
+    /* filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /><feGaussianBlur stdDeviation="3" /></filter></svg>#filter'); */
+    /* filter: grayscale(1) blur(3px); */
+    /* -webkit-filter: grayscale(1) blur(3px); */
+    /* -webkit-transform: scale(1.2); */
+    /* -ms-transform: scale(1.2); */
+    transform: scale(1.2);
+  }
+  
+  .eachimg
+  {
+    transition: all 0.4s ease-in;
+  }
+  
+  .eachimg:hover
+  {
+    transform: scale(1.2);
+  }
+  
+  
+    /* .flexbox-centering {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+    /* .viewport-sizing {
+      font-size: 5vw;
+    } */
+  
+  
+    #nowplayingmovietitle, .nowplayingmovietitleclass{
+      position: relative!important;
+      left: -48%!important;
+      /* visibility: hidden!important; */
+      display:none;
+      /* font-size: 1vw; */
+    }
+  
+    .carousel-inner{
+      padding-left: 5%!important;
+      padding-right:5%!important;
+    }
+  
+  
+  
+    
+  
+  
+    .eachimg {
+      float: left;
+      width: 100%;
+      /* padding: 5px; */
+    }
+    
+    .smallcatitlever3{
+      float: left;
+      width: 16.66%;
+    }
+  
+    .mulcarpopmovies{
+      /* margin-bottom: 1vh; */
+    }
+  
+  /* 
+    .carousel-caption {
+      position: absolute;
+      z-index: 1;
+      display:table;
+      width:100%;
+      height:100%;
+  } */
+  
+  /* .carousel-caption div {
+      display:table-cell;
+      vertical-align: middle;
+      text-align:center;
+  } */
+  
+  /* .trickcenter {
+      position: fixed;
+      top: 84%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+  } */
+    
+  
+  
+  
+#emtpylisttitle {
+    text-align: center;
+    margin-top: 3vw;
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+
+#nonemtpylisttitle {
+  text-align: left;
+  margin-top: 3vw;
+  color: white;
+}
+
+#watchlisttitle {
+  color: white;
+  margin-top: 2%;
+  margin-bottom: 7%;
+}
+
+.eachimg:before {
+  content: '';
+  display: block;
+  position: absolute;
+  /* height: 0%;
+  width: 100%;
+  bottom: 0; */
+  transition: height 0.5s ease-out;
+  background: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+.eachimg:hover:before {
+  height: 100%;
+}
+
+
+
+
+.carousel-caption{
+  bottom: 0.5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#cationtemp::after{
+  /* z-index: 1; */
+  content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+    /* background: linear-gradient(45deg, #101213, #262e31, #ffffff); */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0,1));
+    opacity: 0;
+}
+
+#cationtemp:hover::after{
+  opacity: 1;
+}
+
+
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  /* padding: 8px 12px; */
+  padding-top: 40px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  /* height:100px; */
+  height: 15%;
+  text-align: center;
+  /* margin-top: 30px; */
+
+  background: rgb(0, 0, 0);
+  /* Fallback color */
+  background: rgba(0, 0, 0, 0.5);
+  /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  /* Grey text */
+
+  /* width: 100%; */
+  /* Full width */
+  
+  /* Some padding */
+  /* padding: 20px;  */
+}
+
+/* #coleachimgdiv > .text{
+  width:100%
+} */
+/* #coleachimgdiv{
+  display: inline-block;
+} */
+
+.testcap{
+  color: #f2f2f2;
+  position: absolute;
+  width: 100%;
+  bottom:0;
+  height: 15%;
+  text-align: center;
+  background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+.wrapimgcapinmylistinmylist{
+  position: relative;
+  text-align: center;
+  color: white;
+  /* width: 90%; */
+}
+
+
+
+.wrapimgcapinmylistmobile{
+  position: relative;
+  text-align: center;
+  color: white;
+  /* width: 90%; */
+}
+
+
+
+
+.eachimgverthrinmylist {
+  float: left;
+  /* width: 16.66%; */
+  /* width: 100%; */
+  /* padding-left: 3%
+  padding-right: 3%;
+  padding-top: 3%;
+  padding-bottom: 5%; */
+  /* padding-left: 0.3vw;
+  padding-right: 0.3vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw; */
+  margin-bottom: 10vh;
+}
+
+
+.eachimgverthrinmylistmobile {
+  float: left;
+  /* width: 16.66%; */
+  width: 100%;
+  /* padding-left: 3%
+  padding-right: 3%;
+  padding-top: 3%;
+  padding-bottom: 5%; */
+  /* padding-left: 0.3vw;
+  padding-right: 0.3vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw; */
+  margin-bottom: 10vh;
+}
+
+
+.eachimgverthrinmylist
+{
+  transition: all 0.4s ease-in;
+}
+
+
+.eachimgverthrinmylistmobile
+{
+  transition: all 0.4s ease-in;
+}
+
+.eachimgverthrinmylist:hover
+{
+  transform: scale(1.2);
+}
+
+.eachimgverthrinmylistmobile:hover
+{
+  transform: scale(1.2);
+}
+
+
+.eachimgverthrinmylist:hover + .realtitleverfivinmylist
+{
+    visibility:visible;
+    transform: scale(1.2);
+}
+
+
+.eachimgverthrinmylistmobile:hover + .realtitleverfivinmylistmobile
+{
+    visibility:visible;
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+.realtitleverfivinmylistvertheinmylist{
+  float: left;
+  position: absolute;
+  left: 0;
+  /* bottom: -7%; */
+  bottom: -5vh;
+  background-color: rgb(255, 0, 0)!important;
+  /* background-image: linear-gradient(to top,rgb(0, 0, 0,1), rgba(0, 0, 0, 0)); */
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%);
+
+  color: white;
+  /* margin-left: 7%; */
+  /* margin-right: 2%; */
+  font-size: 17px;
+  line-height: 20px;
+  width: 100%;
+  height: 30%;
+  
+  visibility:visible;
+  /* visibility:hidden; */
+  transition: all 0.01s ease-in;
+  
+}
+
+
+
+
+
+#continwatch .smallcatitle{
+
+  /* float: left!important;
+  width: 16.66% !important; */
+}
+
+/* popmovie topratedmovies trendingmovies populartvshows topratedtvshows trendingtvshows */
+
+
+.navbar-nav {
+text-align: right;
+}
+
+.display-6{
+color:white;
+}
+
+
+
+
+/* mobile */
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+/* Hide captions */
+.carousel-indicators {
+   display: none;
+}
+}
+
+
+
+.mobilemediatitle{
+padding-left: 5%!important;
+color:white;
+font-size:3.5vw;
+bottom: 0vw;
+top:initial;
+padding-bottom: 2%!important;
+
+}
+
+
+.carouselcaptioncustom{
+position: absolute;
+/* right: 15%; */
+bottom: 0;
+/* left: 3%; */
+z-index: 10;
+/* padding-top: 20px; */
+padding-bottom: 0px;
+color: #fff;
+/* text-align: center; */
+width: 100%;
+}
+
+
+/* #nowplayingmimg {
+cursor: pointer;
+}
+
+
+#nowplayingmimg:hover {
+cursor: pointer;
+} */
+
+
+
+@media(hover: hover) and (pointer: fine) {
+#nowplayingmimg:hover
+{
+  position: absolute!important; 
+    
+    top:0px;
+    bottom:0px;
+    right:0px;
+    left:0px;
+    /* width: 100%; */
+    /* max-width: 100%; */
+    
+  /* filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /><feGaussianBlur stdDeviation="3" /></filter></svg>#filter'); */
+  /* filter: grayscale(1) blur(3px); */
+  /* -webkit-filter: grayscale(1) blur(3px); */
+  /* -webkit-transform: scale(1.2); */
+  /* -ms-transform: scale(1.2); */
+  transform: scale(1.2);
+}
+}
+
+
+/* .mobilecar{
+text-align: center;
+} */
+
+
+.eachimgformobile {
+float: left;
+width: 100%;
+padding-left: 10%;
+padding-right: 10%;
+padding-top: 2%;
+padding-bottom: 8%;
+}
+
+
+
+
+.carouselcaptioncustomverthr{
+position: absolute;
+right: 10%;
+bottom: 6%;
+left: 10%;
+z-index: 10;
+/* padding-top: 20px; */
+padding-bottom: 0;
+color: #fff;
+/* text-align: center; */
+padding-bottom: 2%;
+height: 20%;
+}
+
+.smallcatitlemobile{
+color:white;
+font-size:3.5vw;
+bottom: 30%;
+
+left: 20%!important;
+padding-left: 10%;
+padding-top: 15%;
+
+/* top:initial; */
+}
+
+
+
+
+
+/* .centered { position: relative; }
+.centered #nowplayingmimg { display: block; position: relative; z-index: 1; width: 100%; }
+.centered .fade { position: absolute; bottom: 0; width: 100%; height: 150px; z-index: 2; background: rgba(255, 255, 255, 0) linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%) repeat scroll 0 0;  } */
+
+#grad1 {
+  color: white;
+  /* height: 100%; */
+  width: 100%;
+  bottom:0vh;
+
+  /* width:100%; */
+  /* background-image: linear-gradient(to top,rgba(14, 13, 13, 0.781), rgba(0, 0, 0, 0)); */
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0.719) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%); */
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%);
+  position: absolute;
+}
+
+
+
+
+#grad3 {
+color: white;
+height: 100%;
+width: 100%;
+bottom:-5%;
+/* left:-7%; */
+/* right:12%; */
+
+/* width:100%; */
+/* background-image: linear-gradient(to top,rgb(0, 0, 0), rgba(0, 0, 0, 0)); */
+background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%);
+
+position: absolute;
+}
+
+
+
+
+
+.wrapimgcapinmylist{
+position: relative;
+text-align: left;
+color: white;
+/* margin-bottom: 1vh; */
+
+}
+
+
+
+.captitle {
+position: absolute;
+/* bottom: 8px;
+left: 16px; */
+/* position: absolute; */
+bottom: -16vw!important;
+font-size: 1vw;
+}
+
+
+.captitlever2 {
+position: absolute;
+/* bottom: 8px;
+left: 16px; */
+/* position: absolute; */
+bottom: 5vw;
+font-size: 1vw;
+}
+
+
+
+
+.col-lg-3{
+/* width: 25%;
+min-width: 230px; */
+/* float: left;
+position: relative;
+min-height: 1px;
+padding-left: 15px;
+padding-right: 15px;
+background-color: #aaa; */
+/* min-height: 300px; */
+}
+
+figure {
+/* width:100%; */
+display: inline-block; 
+position: relative;
+margin: 0;
+float: left;
+}
+
+/* figure img { max-width: 100%; } */
+.realtitleverfivinmylistmobile{
+  float: left;
+position: absolute;
+right: 0;
+left: 0;
+/* bottom: -7%; */
+bottom: -4vh;
+/* background-color: red!important; */
+/* background-image: linear-gradient(to top,rgb(0, 0, 0,1), rgba(0, 0, 0, 0.301)); */
+background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%);
+
+color: white;
+/* margin-left: 7%; */
+margin-left: 2vw; 
+margin-right: 2vw;
+/* font-size: 17px; */
+/* line-height: 20px; */
+/* width: 85%; */
+/* height: 30%; */
+
+/* width: 13vw; */
+width: 100%;
+height: 10vh;
+margin-bottom: 10vh;
+
+visibility:visible;
+/* visibility:hidden; */
+/* transition: all 0.01s ease-in; */
+transition: all 0.01s ease-in;
+}
+
+
+
+
+.realtitleverfivinmylist{
+float: left;
+position: absolute;
+left: 0;
+/* bottom: -7%; */
+bottom: -4vh;
+/* background-color: red!important; */
+/* background-image: linear-gradient(to top,rgb(0, 0, 0,1), rgba(0, 0, 0, 0.301)); */
+background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%);
+
+color: white;
+/* margin-left: 7%; */
+margin-left: 1vw;
+/* margin-right: 2%; */
+font-size: 17px;
+line-height: 20px;
+/* width: 85%; */
+/* height: 30%; */
+
+width: 13vw;
+height: 10vh;
+margin-bottom: 10vh;
+
+/* visibility:visible; */
+visibility:hidden;
+transition: all 0.01s ease-in;
+
+}
+
+/* .realtitleverfivinmylist:hover
+{
+transform: scale(1.2);
+} */
+
+
+.eachimgverthr {
+float: left;
+/* width: 16.66%; */
+width: 100%;
+padding-left: 3%;
+padding-right: 3%;
+padding-top: 3%;
+padding-bottom: 5%;
+}
+
+
+
+.eachimgverthr
+{
+transition: all 0.4s ease-in;
+}
+
+.eachimgverthr:hover
+{
+transform: scale(1.2);
+}
+
+
+.eachimgverthr:hover + .realtitleverfivinmylist
+{
+  visibility:visible;
+  transform: scale(1.2);
+}
+
+
+.realtitleverfivinmylist + .eachimgverthr:hover
+{
+  visibility:visible;
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+.realtitleverfivinmylistverthe{
+float: left;
+position: absolute;
+left: 0;
+bottom: -7%;
+/* background-color: red!important; */
+/* background-image: linear-gradient(to top,rgb(0, 0, 0,1), rgba(0, 0, 0, 0)); */
+background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%);
+
+color: white;
+margin-left: 7%;
+/* margin-right: 2%; */
+font-size: 17px;
+line-height: 20px;
+width: 86%;
+height: 30%;
+
+/* visibility:visible; */
+visibility:hidden;
+transition: all 0.01s ease-in;
+
+}
+
+.innertitle{
+  width: 100%;
+  /* background-color: red; */
+  /* padding-top: 10%; */
+  padding-top: 5vh;
+  padding-bottom: 0.5vh;
+  bottom:0vh;
+  padding-left:0.5vw;
+  font-size: calc(2px + 0.7vw)!important;
+}
+
+
+
+.innertitlemobile{
+  width: 100%;
+  text-align: left!important;
+  /* background-color: red; */
+  /* padding-top: 10%; */
+  padding-top: 5vh;
+  padding-bottom: 0.5vh;
+  bottom:0vh;
+  padding-left:0.5vw;
+  font-size: calc(2px + 0.7vw)!important;
+}
+
+
+#nowplayingmimg:hover + .realtitleverfivinmylistverthe
+{
+  visibility:visible;
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+/* realtitleverfivinmylist */
+/* .realtitleverfivinmylist:hover + .eachimgverthr,
+.eachimgverthr:hover {
+ visibility:visible;
+  transform: scale(1.2);
+} */
+
+
+.centeredver3 .carousel-indicators{
+bottom:-7vh;
+}
+
+
+
+
+.maindetailwindow {
+  /* position: fixed; 
+  top: 50%;
+  left: 50%; */
+
+  padding-left: 5%;
+  padding-right:5%;
+  /* padding-top:5%; */
+  padding-bottom: 5%;
+
+  /* margin-bottom: 10%; */
+  
+}
+
+/* #outerrowinmylist{
+  padding-bottom: 2vh;
+  display:grid;
+} */
+
+.bumpdiv{
+  width:100%;
+  height:3vh;
+}
+
+
+.col-lg-2{
+  /* height:1vh; */
+}
+
+
+/* .mulcarpopmovies{
+  display:inline-block;
+  height:1vh;
+} */
+
+
+
+
+
+#page-container {
+  position: relative;
+  min-height: 20vh;
+  text-align: center;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+  text-align: center;
+  
+
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+  color:white;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  /* background-image: linear-gradient(to top,black, rgba(0, 0, 0, 0)); */
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%);
+
+  padding-bottom:8vh;
+  padding-top:2vh;
+}
+
+
+#mylistpage{
+  display: flow-root;
+  /* width: fit-content; */
+  /* width:100%; */
+}
+
+.mobilemediatitlenomain{
+  padding-left: 5%!important;
+  color:white;
+  /* font-size:3.5vw; */
+  /* font-size: 10px; */
+  font-size: calc(10px + 0.8vw);
+  bottom: 0vw;
+  top:initial;
+  /* padding-bottom: 2%!important; */
+  /* padding-top:10%!important; */
+  padding-top: 30%!important;
+  /* margin-bottom: 2vh; */
+  
+}
+
+
+
+
+#nonmobilewatchlist{
+  display:none;
+}
+
+#mobilewatchlist{
+  display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.imageContainer {
+  text-align: center;
+  width: 80%;
+}
+.imageContainer img {
+  display: block;
+}
+.imageContainer div {
+  position: relative;
+  display: inline-block;
+  /* if you need ie6/7 support */
+  *display: inline;
+  zoom: 1;
+}
+.imageContainer span {
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -5%;
+  /* width: 100%; */
+  width: 80%;
+  /* background: #000; */
+  /* background: rgba(0,0,0,.5); */
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%)!important;
+
+  padding-top: 50%;
+  text-align: left!important;
+}
+
+
+.eachimgforcollelem{
+  width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+#eachcolelem{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  /* margin-right: 3%!important; */
+  margin-top: 2%!important;
+  margin-bottom: 3.5%!important;
+}
+
+
+#eachcolelemmobile{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  /* margin-right: 3%!important; */
+  margin-top: 30%!important;
+}
+
+
+#mobileelemouter{
+  text-align: center;
+}
+
+
+#mobibleverwatlist {
+  /* width: 80%; */
+  /* margin-left:10vw; */
+  /* margin-right:10vw; */
+  /* margin-top:10%; */
+  margin-left:20%;
+  margin-right:20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.imageContainermobile {
+  text-align: center;
+}
+.imageContainermobile img {
+  display: block;
+}
+.imageContainermobile div {
+  position: relative;
+  display: inline-block;
+  /* if you need ie6/7 support */
+  *display: inline;
+  zoom: 1;
+}
+.imageContainermobile span {
+  color: #fff!important;
+  position: absolute!important;
+  left: 0!important;
+  /* bottom: 0; */
+  bottom: -5%!important;
+  /* width: 100%; */
+  width: 100%!important;
+  /* background: #000; */
+  /* background: rgba(0,0,0,.5); */
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 30%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 100%)!important;
+  padding-top: 50%;
+  text-align: left!important;
+}
+
+
+.eachimgforcollelemmobile{
+  width:100%;
+  margin-top: 5%;
+}
+
+
+
+#mobilewatlisttext{
+  /* position: absolute; */
+  width: 100%;
+  /* display: contents; */
+  left: 10%;
+    /* padding-bottom: 10%; */
+  bottom: 10px;
+}
+
+
+
+
+
+#watlisttext{
+  /* position: absolute; */
+  width: 100%;
+  /* display: contents; */
+  left: 10%;
+    /* padding-bottom: 10%; */
+  bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .eachcapnonmobile{
+  
+  visibility:hidden!important;
+  display:none;
+  transition: all 0.01s ease-in!important;
+  
+}
+
+#watlisttext{
+  display:none;
+  font-size: calc(2px + 0.7vw)!important;
+
+  
+}
+
+
+
+.mousewatchlistclass:hover + .eachcapnonmobile
+{
+    visibility:visible!important;
+    display:block!important;
+    transform: scale(1.2)!important;
+} */
+
+
+
+
+.eachcapnonmobile{
+  
+
+  display:none;
+  
+}

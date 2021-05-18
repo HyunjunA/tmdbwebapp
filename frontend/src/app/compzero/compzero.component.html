@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" [routerLink]="['/']"  >USC Films</a>
+    <button class="navbar-toggler float-xs-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/']" >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/mylist']">My List</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" [routerLink]="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="#">Action</a>
+            <a class="dropdown-item" [routerLink]="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="#">Something else here</a>
+          </div>
+        </li> -->
+            <!-- <li class="nav-item">
+          <a class="nav-link disabled" [routerLink]="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> -->
+        </ul>
+
+
+
+        <!-- Make autocomplete using  -->
+        <!-- <form class="form-inline my-2 my-lg-0"> -->
+        <form class="form-inline my-2 my-lg-0">
+            
+            <ng-template #rt let-r="result" let-t="term" >
+              <div *ngIf="r['backdrop_path'] != null" >
+                <img [src]="r['backdrop_path'] != null ? 'https://image.tmdb.org/t/p/w500/' + r['backdrop_path'] : 'https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg' "
+                    class="mr-1" id="drimgone" >
+                <ngb-highlight [result]="r.name || r.title" [term]="t" ></ngb-highlight>
+              </div>
+            </ng-template>
+
+
+            <input type="text" class="form-control mr-sm-2 " id="Keyword" name="Keyword" placeholder="Search"
+                aria-label="Search" [(ngModel)]="model" [ngbTypeahead]="maindatabyusersearchpublic"
+                [resultTemplate]="rt" [inputFormatter]="inputFormatBandListValue" #instance="ngbTypeahead" (ngModelChange)="changeUrl(model);" >
+
+            
+        </form>
+
+
+<!-- 
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Right-aligned menu
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" *ngFor="let r of result;  let t of term; " >
+              <button class="dropdown-item" type="button">
+                  <img [src]="r['backdrop_path'] != null ? 'https://image.tmdb.org/t/p/w500/' + r['backdrop_path'] : 'https://bytes.usc.edu/cs571/s21_JSwasm00/hw/HW6/imgs/movie-placeholder.jpg' "
+                class="mr-1" id="drimgone" >
+                <ngb-highlight [result]="r.name || r.title" [term]="t" ></ngb-highlight>
+            </button>
+              
+            </div>
+          </div> -->
+        
+    </div>
+</nav>
+<div id="memoone"></div>
+<div id="memotwo"></div>
+<!-- <a class="nav-link" routerLink="/watch/movie">BLOG</a> -->
+<router-outlet></router-outlet>

@@ -1,0 +1,654 @@
+<!-- <div id="jajaja">Smaller then 700 px width</div> -->
+
+
+<!-- Now playing -->
+<div class="centered" id="nowplayingmovie">
+
+    <div id="mobileplaymovie">
+        <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+            (slide)="onSlide($event)">
+            <ng-template ngbSlide *ngFor="let info of nowplayingmediainfo ;  index as i">
+                <div id="nowplayingmoviecapimgmobile{{i}}" (touchstart)="touchstartfunc($event,i)"
+                    (touchend)="touchendfunc($event,i)">
+                    <div class="carouselcaptioncustom" (touchstart)="touchstartfunc($event,i)"
+                        (touchend)="touchendfunc($event,i)">
+
+                        <!-- <div> -->
+                        <div id="gradmain" (touchstart)="touchstartfunc($event,i)" (touchend)="touchendfunc($event,i)">
+                            <h3 id="nowplayingmovietitletext" class="mobilemediatitle">{{info[1]}}</h3>
+                        </div>
+                        <p id="" class="mobilemediatitle">{{info[1]}}</p>
+                        <!-- </div> -->
+                    </div>
+                    <a [routerLink]="[info[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <!-- <div class="mainmobile" > -->
+                        <div id="mainmobilefirstcaur" class="mainmobile" (touchstart)="touchstartfunc($event,i)"
+                            (touchend)="touchendfunc($event,i)">
+                            <img id="nowplayingmovieimg" [src]="info[0]" alt="My image {{i}} description"
+                                class=" mx-auto d-block eachimgverthr " (touchstart)="touchstartfunc($event,i)"
+                                (touchend)="touchendfunc($event,i)">
+
+                        </div>
+                    </a>
+                    <div id=memo>{{i}}</div>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+
+
+    <!-- original -->
+    <div id="nonmobileplaymovie">
+        <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+            (slide)="onSlide($event)">
+            <ng-template ngbSlide *ngFor="let info of nowplayingmediainfoformobile;  index as i">
+                <div class="carousel-caption" (mouseover)='over()' (mouseout)='out()'>
+
+                    <h3 id="nowplayingmovietitle" class="nowplayingmovietitleclass">
+                        <div (mouseover)='over()' (mouseout)='out()'>
+                            {{info[1]}}
+                        </div>
+                    </h3>
+
+                </div>
+                <a [routerLink]="[info[2]]" target="_self" rel="nofollow noopener noreferrer">
+                    <div class="picsum-img-wrapper" (mouseover)='over()' (mouseout)='out()'>
+                        <!-- <figure class=""> -->
+                        <div id="nowplaymoviwrap">
+                            <img id="nowplayingmimg" [src]="info[0]" alt="My image {{i + 1}} description"
+                                class="mx-auto d-block">
+                            <!-- <figcaption class="realtitle">{{info[1]}}</figcaption> -->
+                            <div class="realtitleverthe"></div>
+                        </div>
+                        <!-- </figure> -->
+                    </div>
+                </a>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+
+
+
+
+</div>
+
+
+<!-- Continue Watching -->
+<div class="centeredver3" id="continwatch">
+    <!-- <h1 class="eachheader">Continue Watching</h1> -->
+
+    <div id="mobileconwatch">
+        <div *ngIf="conwatmoviesmediainfosetformobie">
+            <h1 class="eachheader">Continue Watching</h1>
+            <!-- Mobile section : one image per slide -->
+
+
+            <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+                [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+                <ng-template ngbSlide *ngFor="let each of conwatmoviesmediainfosetformobie ;  index as i">
+            
+                    <div id="nowplayingmoviecapimgmobileconti{{i}}" (touchstart)="touchstartfunccontin($event,i)"
+                        (touchend)="touchendfunccontin($event,i)">
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]"
+                                (touchstart)="touchstartfunccontin($event,i)" (touchend)="touchendfunccontin($event,i)">
+                            <div class="carouselcaptioncustomverthr" (touchstart)="touchstartfunccontin($event,i)"
+                                (touchend)="touchendfunccontin($event,i)">
+                                
+            
+                                <div id="grad1" (touchstart)="touchstartfunccontin($event,i)" (touchend)="touchendfunccontin($event,i)">
+                                    <h3 id="" class="mobilemediatitlenomain" (touchstart)="touchstartfunccontin($event,i)"
+                                        (touchend)="touchendfunccontin($event,i)">{{each[1]}}</h3>
+                                </div>
+                                
+                            </div>
+            
+            
+            
+                        </a>
+                    </div>
+
+
+
+                    <!-- <div id="watchlist{{i}}" (touchstart)="touchstartfuncwatchlist($event,i)"
+                    (touchend)="touchendfuncwatchlist($event,i)">
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            
+
+                            
+                                <div class="imageContainermobile">
+                                    <img class="eachimgforcollelemmobile" [src]="each[0]"  [title]="each[1]"
+                                    [alt]="each[1]"/>
+                                    <span class="eachcap">
+                                        <div id="mobilewatlisttext">{{each[1]}}</div>
+                                        
+                                    </span>
+                                </div>
+                            
+                            
+                        </a>
+                    </div> -->
+
+
+                </ng-template>
+            </ngb-carousel>
+            </div>
+            </div>
+
+
+
+    <!-- Desktop section : multiple images per slide -->
+    <div id="nonmobileconwatch">
+        <!-- "reviewinfo.length > 0" -->
+        <div *ngIf="conwatmoviesmediainfosetformobie.length > 0">
+            <h1 class="eachheader">Continue Watching</h1>
+            <!-- <div id="nonmobileconwatch"> -->
+            <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+                <ng-template ngbSlide *ngFor="let group of conwatmoviesmediainfoset">
+                    <div class="mulcarpopmovies" style="" *ngFor="let each of group ;  index as i  ">
+                        <!-- <div class="carousel-caption">
+                            <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                        </div>
+                        -->
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            <!-- <div class="wrapimgcap">
+                                <img class="eachimg" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                                <div class="captitle" [style.left.px]="i*curwinsizedivided" >{{each[1]}}</div>
+                            </div> -->
+
+                            <div id="container" class="wrapimgcap">
+                                <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                    <img class="eachimgverthr" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                                    <figcaption class="realtitle">
+                                        <div class="innertitle">
+                                            {{each[1]}}
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+
+                        </a>
+
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Popular Movies -->
+<!-- <h1>Popular Movies</h1> -->
+<div class="centeredver3" id="popmovie">
+    <h1 class="eachheader">Popular Movies</h1>
+    <div id="mobilepopmovie">
+        <div *ngIf="popularmoviesmediainfosetformobile">
+            <!-- <h1 class="eachheader">Popular Movies</h1> -->
+            <!-- Mobile section : one image per slide -->
+
+            <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+                [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+                <ng-template ngbSlide *ngFor="let each of popularmoviesmediainfosetformobile;  index as i">
+                    <div id="nowplayingmoviecapimgmobilepopmu{{i}}" (touchstart)="touchstartfuncpopmu($event,i)"
+                        (touchend)="touchendfuncpopmu($event,i)">
+
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                        <div class="carouselcaptioncustomverthr" (touchstart)="touchstartfuncpopmu($event,i)"
+                        (touchend)="touchendfuncpopmu($event,i)">
+                            <!-- <div id="grad3"></div>
+                            <h3 id="" class="smallcatitlemobile">{{each[1]}}</h3> -->
+                            <div id="grad1"(touchstart)="touchstartfuncpopmu($event,i)"
+                            (touchend)="touchendfuncpopmu($event,i)">
+                                <h3 id="" class="mobilemediatitlenomain">{{each[1]}}</h3>
+                            </div>
+
+                        </div>
+
+                    </a>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+    <!-- Desktop section : multiple images per slide -->
+    <div id="nonmobilepopmovie">
+        <div *ngIf="popularmoviesmediainfoset">
+
+            <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+                <ng-template ngbSlide *ngFor="let group of popularmoviesmediainfoset;  ">
+
+                    <div class="mulcarpopmovies" style="" *ngFor="let each of group;index as i ">
+                        <!-- <div class="carousel-caption">
+                        <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                    </div>
+                     -->
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            <div id="container" class="wrapimgcap">
+                                <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                    <img class="eachimgverthr" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                                    <figcaption class="realtitle">
+                                        <div class="innertitle">
+                                            {{each[1]}}
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </a>
+
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+    <!-- </div> -->
+
+</div>
+
+
+
+
+
+
+<!-- Top rated movies -->
+<!-- <h1>Top rated Movies</h1> -->
+<div class="centeredver3" id="topratedmovies">
+    <h1 class="eachheader">Top rated Movies</h1>
+    <!-- <div *ngIf="topratedmoviesmediainfoset"> -->
+    <div id=mobiletopratedmovie>
+        <div *ngIf="topratedmoviesmediainfosetformobile">
+            <!-- Mobile section : one image per slide -->
+
+            <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+                [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+                <!-- <ng-template ngbSlide *ngFor="let each of conwatmoviesmediainfoset ;  index as i" > -->
+                <ng-template ngbSlide *ngFor="let each of topratedmoviesmediainfosetformobile;  index as i">
+                    <div id="nowplayingmoviecapimgmobiletopratmu{{i}}" (touchstart)="touchstartfunctopratmu($event,i)"
+                        (touchend)="touchendfunctopratmu($event,i)">
+                    
+                    <!-- <div class="carouselcaptioncustom" >
+                    <h3 id="" class="mobilemediatitle" >{{each[1]}}</h3>
+                    
+                </div> -->
+
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]" (touchstart)="touchstartfunctopratmu($event,i)"
+                        (touchend)="touchendfunctopratmu($event,i)">
+                        <div class="carouselcaptioncustomverthr" (touchstart)="touchstartfunctopratmu($event,i)"
+                        (touchend)="touchendfunctopratmu($event,i)">
+                            <!-- <div id="grad3"></div>
+                            <h3 id="" class="smallcatitlemobile">{{each[1]}}</h3> -->
+                            <div id="grad1" (touchstart)="touchstartfunctopratmu($event,i)"
+                            (touchend)="touchendfunctopratmu($event,i)">
+                                <h3 id="" class="mobilemediatitlenomain">{{each[1]}}</h3>
+                            </div>
+                        </div>
+
+                    </a>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+    <!-- Desktop section : multiple images per slide -->
+    <div id=nonmobiletopratedmovie>
+        <div *ngIf="topratedmoviesmediainfoset">
+
+            <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+                <ng-template ngbSlide *ngFor="let group of topratedmoviesmediainfoset ">
+                    <div class="mulcarpopmovies" style="" *ngFor="let each of group; index as i ">
+                        <!-- <div class="carousel-caption">
+                        <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                    </div>
+                     -->
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            <div id="container" class="wrapimgcap">
+                                <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                    <img class="eachimgverthr" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                                    <figcaption class="realtitle">
+                                        <div class="innertitle">
+                                            {{each[1]}}
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </a>
+
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+<!-- Trending movies tremu -->
+<!-- <h1>Trending Movies</h1> -->
+<div class="centeredver3" id="trendingmovies">
+    <h1 class="eachheader">Trending Movies</h1>
+    <!-- <div *ngIf="trendingmoviesmediainfoset"> -->
+    <div id="mobiletrendingmovie">
+        <div *ngIf="trendingmoviesmediainfosetformobile">
+            <!-- Mobile section : one image per slide -->
+
+            <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+                [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+                <!-- <ng-template ngbSlide *ngFor="let each of conwatmoviesmediainfoset ;  index as i" > -->
+                <ng-template ngbSlide *ngFor="let each of trendingmoviesmediainfosetformobile;  index as i">
+                    <div id="nowplayingmoviecapimgmobiletremu{{i}}" (touchstart)="touchstartfunctremu($event,i)"
+                        (touchend)="touchendfunctremu($event,i)">
+                    
+                    <!-- <div class="carouselcaptioncustom" >
+                            <h3 id="" class="mobilemediatitle" >{{each[1]}}</h3>
+                            
+                        </div> -->
+
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                        <div class="carouselcaptioncustomverthr">
+                            <!-- <div id="grad3"></div>
+                            <h3 id="" class="smallcatitlemobile">{{each[1]}}</h3> -->
+                            <div id="grad1">
+                                <h3 id="" class="mobilemediatitlenomain">{{each[1]}}</h3>
+                            </div>
+                        </div>
+
+                    </a>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+    <!-- Desktop section : multiple images per slide -->
+    <div id="nonmobiletrendingmovie">
+        <div *ngIf="trendingmoviesmediainfoset">
+            <!-- <div id="nonmobiletrendingmovie"> -->
+            <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+                <ng-template ngbSlide *ngFor="let group of trendingmoviesmediainfoset;  ">
+                    <div class="mulcarpopmovies" style="" *ngFor="let each of group; index as i ">
+                        <!-- <div class="carousel-caption">
+                        <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                    </div>
+                     -->
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            <div id="container" class="wrapimgcap">
+                                <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                    <img class="eachimgverthr" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                                    <figcaption class="realtitle">
+                                        <div class="innertitle">
+                                            {{each[1]}}
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </a>
+
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Popular TV shows -->
+<!-- <h1>Popular TV shows</h1> -->
+<div class="centeredver3" id="populartvshows">
+    <h1 class="eachheader">Popular TV shows</h1>
+    <!-- <div *ngIf="populartvshowsmediainfoset"> -->
+    <!-- Mobile section : one image per slide -->
+    <div id="mobilepoptvshows">
+        <div *ngIf="populartvshowsmediainfosetformobile">
+            <!-- Mobile section : one image per slide -->
+            <!-- <div id="mobilepoptvshows"> -->
+            <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+                [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+                <!-- <ng-template ngbSlide *ngFor="let each of conwatmoviesmediainfoset ;  index as i" > -->
+                <ng-template ngbSlide *ngFor="let each of populartvshowsmediainfosetformobile;  index as i">
+                    <!-- <div class="carouselcaptioncustom" >
+                        <h3 id="" class="mobilemediatitle" >{{each[1]}}</h3>
+                        
+                    </div> -->
+                    <div id="nowplayingmoviecapimgmobilepoptv{{i}}" (touchstart)="touchstartfuncpoptv($event,i)"
+                        (touchend)="touchendfuncpoptv($event,i)">
+
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                        <div class="carouselcaptioncustomverthr">
+                            <!-- <div id="grad3"></div>
+                                <h3 id="" class="smallcatitlemobile">{{each[1]}}</h3> -->
+                            <div id="grad1">
+                                <h3 id="" class="mobilemediatitlenomain">{{each[1]}}</h3>
+                            </div>
+                        </div>
+
+                    </a>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+    <!-- Desktop section : multiple images per slide -->
+    <div id="nonmobilepoptvshows">
+        <div *ngIf="populartvshowsmediainfoset">
+
+            <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+                <ng-template ngbSlide *ngFor="let group of populartvshowsmediainfoset">
+                    <div class="mulcarpopmovies" style="" *ngFor="let each of group; index as i ">
+                        <!-- <div class="carousel-caption">
+                        <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                    </div>
+                     -->
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            <div id="container" class="wrapimgcap">
+                                <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                    <img class="eachimgverthr" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                                    <figcaption class="realtitle">
+                                        <div class="innertitle">
+                                            {{each[1]}}
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </a>
+
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+</div>
+
+<!-- Top rated TV shows -->
+<!-- <h1>Top rated TV shows</h1> -->
+<div class="centeredver3" id="topratedtvshows">
+    <h1 class="eachheader">Top rated TV shows</h1>
+    <div id="mobiletopratedtvshows">
+        <div *ngIf="topratedtvshowsmediainfosetformobile">
+            <!-- Mobile section : one image per slide -->
+            <!-- <div *ngIf="populartvshowsmediainfoset"> -->
+            <!-- Mobile section : one image per slide -->
+
+            <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+                [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+                <!-- <ng-template ngbSlide *ngFor="let each of conwatmoviesmediainfoset ;  index as i" > -->
+                <ng-template ngbSlide *ngFor="let each of topratedtvshowsmediainfosetformobile;  index as i">
+                    <!-- <div class="carouselcaptioncustom" >
+                            <h3 id="" class="mobilemediatitle" >{{each[1]}}</h3>
+                            
+                        </div> -->
+                    <div id="nowplayingmoviecapimgmobiletopratv{{i}}" (touchstart)="touchstartfunctopratv($event,i)"
+                        (touchend)="touchendfunctopratv($event,i)">
+
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                        <div class="carouselcaptioncustomverthr">
+                            <!-- <div id="grad3"></div>
+                                <h3 id="" class="smallcatitlemobile">{{each[1]}}</h3> -->
+                            <div id="grad1">
+                                <h3 id="" class="mobilemediatitlenomain">{{each[1]}}</h3>
+                            </div>
+                        </div>
+
+                    </a>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+    <!-- Desktop section : multiple images per slide -->
+    <div id="nonmobiletopratedtvshows">
+        <div *ngIf="topratedtvshowsmediainfoset">
+            <!-- <div id="nonmobiletopratedtvshows"> -->
+            <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+                <ng-template ngbSlide *ngFor="let group of topratedtvshowsmediainfoset">
+                    <div class="mulcarpopmovies" style="" *ngFor="let each of group; index as i ">
+                        <!-- <div class="carousel-caption">
+                        <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                    </div>
+                     -->
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            <div id="container" class="wrapimgcap">
+                                <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                    <img class="eachimgverthr" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                                    <figcaption class="realtitle">
+                                        <div class="innertitle">
+                                            {{each[1]}}
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </a>
+
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Trending TV shows -->
+<!-- <h1>Trending TV shows</h1> -->
+<div class="centeredver3" id="trendingtvshows">
+    <h1 class="eachheader">Trending TV shows</h1>
+    <div id="mobiletrendtvshows">
+        <div *ngIf="trendingtvshowsmediainfosetformobile">
+            <!-- Mobile section : one image per slide -->
+
+            <ngb-carousel class="mobilecar" #carousel [interval]="5000" [pauseOnHover]="pauseOnHover"
+                [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+                <!-- <ng-template ngbSlide *ngFor="let each of conwatmoviesmediainfoset ;  index as i" > -->
+                <ng-template ngbSlide *ngFor="let each of trendingtvshowsmediainfosetformobile;  index as i">
+                    <!-- <div class="carouselcaptioncustom" >
+                        <h3 id="" class="mobilemediatitle" >{{each[1]}}</h3>
+                        
+                    </div> -->
+                    <div id="nowplayingmoviecapimgmobiletrendtv{{i}}" (touchstart)="touchstartfunctrendtv($event,i)"
+                        (touchend)="touchendfunctrendtv($event,i)">
+                     
+                    <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                        <img class="eachimgformobile" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                        <div class="carouselcaptioncustomverthr">
+                            <!-- <div id="grad3"></div>
+                                <h3 id="" class="smallcatitlemobile">{{each[1]}}</h3> -->
+                            <div id="grad1">
+                                <h3 id="" class="mobilemediatitlenomain">{{each[1]}}</h3>
+                            </div>
+                        </div>
+
+                    </a>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+    <!-- Desktop section : multiple images per slide -->
+    <div id="nonmobiletrendtvshows">
+        <div *ngIf="trendingtvshowsmediainfoset">
+
+            <ngb-carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus">
+                <ng-template ngbSlide *ngFor="let group of trendingtvshowsmediainfoset ">
+                    <div class="mulcarpopmovies" style="" *ngFor="let each of group; index as i ">
+                        <!-- <div class="carousel-caption">
+                            <h3 id="" class="smallcatitle" >{{each[1]}}</h3>
+                        </div>
+                        -->
+                        <a [routerLink]="[each[2]]" target="_self" rel="nofollow noopener noreferrer">
+                            <div id="container" class="wrapimgcap">
+                                <figure class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                    <img class="eachimgverthr" [src]="each[0]" [title]="each[1]" [alt]="each[1]">
+                                    <figcaption class="realtitle">
+                                        <div class="innertitle">
+                                            {{each[1]}}
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </a>
+
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- <div id="footerdiv"><p id="footer">Powered by TMDB. Developed by Hyunjun Choi</p></div> -->
+<div id="page-container">
+    <div id="content-wrap">
+
+    </div>
+    <footer id="footer">Powered by TMDB. Developed by Hyunjun Choi.</footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="testimgdiv" class="hero-image" >
+        <img id="testimage" src="https://static.turbosquid.com/Preview/001312/025/1E/_DHQ.jpg" (mouseover)='testfunction()' (mouseout)='out()'/>
+    </div> -->
